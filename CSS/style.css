@@ -1,0 +1,52 @@
+body{
+    background-color: goldenrod;
+    
+}
+.Nav-Bar{
+    background-color: white;
+    display:flex; 
+    min-height: 50px;
+}
+.Logo{
+    max-width: 100px;
+    max-height: 50px;
+}
+.Nav-bttns{
+    margin-top: 15px;  
+    width:100%;
+}
+.Home-bttn{
+    float: right;
+    max-width: auto;
+    max-height: 40px;
+    margin-right: 5px;
+}
+.Leaderboard-bttn{
+    float: right;
+    max-width: auto;
+    max-height: 40px;
+    margin-right: 5px;
+}
+.Play-bttn{
+     float: right;
+    max-width: auto;
+    max-height: 40px;
+    margin-right: 5px;
+    
+}
+
+
+.Main-Area{
+    background-color: green ;
+    width: auto;
+    min-height: auto;
+}
+.Game{
+    background-color: blueviolet;
+    border-radius: 30px;
+    margin: 30px;
+    min-height: 500px;
+min-width: 500px;
+max-width: 1000px;
+justify-self: center;
+}
