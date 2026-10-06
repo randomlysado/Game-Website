@@ -4,21 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/CSS/style.css">
-    <title>Document</title>
+    <title> Game In Progress</title>
 </head>
     <body>
-        <div class="Nav-Bar">
+        <div id="Nav-Bar">
             <img class="Logo" src="/images/Kurami.png">
             <div class="Nav-bttns">
-                <a class="Play-bttn" href="game.html">Play</a>
-                <a class="Leaderboard-bttn" href="leaderboard.html"> Leaderboard</a>
-                <a  class="Home-bttn" href="/index.html">Home</a>
+                <a id="Play-bttn" href="game.html">Play</a>
+                <a id="Leaderboard-bttn" href="leaderboard.html"> Leaderboard</a>
+                <a  id="Home-bttn" href="/index.html">Home</a>
             </div>
         </div>
-        <canvas id="GameSpace">
+            <canvas id="game-canvas" width="" height="">
+            </canvas>
+            <div id="controlHintBox">
+                <button id="closeHintBox">
+               
+                </button>
+                <p class="ControlHints">
+                W: Up
+                A: Left
+                S: Down
+                D: Right
+                </p>
 
-        </canvas>
+            </div>
+
+
+
+        <script src="/JavaScript/main.js"></script>
+        <script src="/JavaScript/input.js"></script>
+        <script src="/JavaScript/game.js"></script>
+        <script src="/JavaScript/ref.js"></script>
 
     </body>
-    <script src="/JavaScript/main.js"></script>
+  
 </html>

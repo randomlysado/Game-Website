@@ -2,10 +2,12 @@ body{
     background-color: goldenrod;
     
 }
-.Nav-Bar{
+#Nav-Bar{
     background-color: white;
     display:flex; 
+    margin-top: -10px;
     min-height: 50px;
+    width: auto;
 }
 .Logo{
     max-width: 100px;
@@ -15,19 +17,19 @@ body{
     margin-top: 15px;  
     width:100%;
 }
-.Home-bttn{
+#Home-bttn{
     float: right;
     max-width: auto;
     max-height: 40px;
     margin-right: 5px;
 }
-.Leaderboard-bttn{
+#Leaderboard-bttn{
     float: right;
     max-width: auto;
     max-height: 40px;
     margin-right: 5px;
 }
-.Play-bttn{
+#Play-bttn{
      float: right;
     max-width: auto;
     max-height: 40px;
@@ -77,5 +79,54 @@ td,th{
 .PlayerRow, td{
     height: 35px;
     font-size: normal;
-    background-color: rgb(145, 30, 145);
+    background-color: #911e91;
 }
+
+
+#game-canvas{
+    margin-top: 25px;
+    width: 80%;
+    display: flex;
+    justify-self: center;
+}
+
+#controlHintBox{
+   width: 450px;
+    height: 550px;
+   position: fixed;
+    top: 45%;
+    left: 50%;
+      border-radius: 10px;
+    transform: translate(-50%, -45%);
+    display: flex;
+    background-color: purple;
+    justify-content: center;
+}
+.ControlHints{
+    width: 350px;
+    height: 450px;
+    resize: none;
+    font: bold;
+  
+     margin-top: 70px;
+     background-color: transparent;
+     border: transparent;
+     
+}
+#closeHintBox{
+  
+  
+    height: 40px;
+    width: 40px;
+     position: fixed;
+     top: 3%;
+    left: 87%;
+    display: flex;
+    justify-content: center;
+}
+.closeHintBoxText
+{
+    font-size: 30px;
+    font-weight: bold;
+}
+
