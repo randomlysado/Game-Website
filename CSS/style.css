@@ -1,12 +1,12 @@
 body{
     background-color: goldenrod;
-    
+    margin: 0px;
 }
 #Nav-Bar{
     background-color: white;
     display:flex; 
-    margin-top: -10px;
-    min-height: 50px;
+    position: sticky;/* Keeps Navbar at the top of the screen without modifying other elements */
+    top: 0px;
     width: auto;
 }
 .Logo{
@@ -17,19 +17,17 @@ body{
     margin-top: 15px;  
     width:100%;
 }
-#Home-bttn{
-    float: right;
-    max-width: auto;
-    max-height: 40px;
-    margin-right: 5px;
+a:link{
+    color: black;
+    font-style: normal;
 }
-#Leaderboard-bttn{
-    float: right;
-    max-width: auto;
-    max-height: 40px;
-    margin-right: 5px;
+a:visited{
+    color: black;
 }
-#Play-bttn{
+a:hover{
+    color:purple;
+}
+#navbttn{
      float: right;
     max-width: auto;
     max-height: 40px;
@@ -101,6 +99,7 @@ td,th{
     display: flex;
     background-color: purple;
     justify-content: center;
+    visibility: hidden;
 }
 .ControlHints{
     width: 350px;
@@ -130,3 +129,72 @@ td,th{
     font-weight: bold;
 }
 
+
+
+.SignupBox{
+    background-color: rgb(16, 42, 35);
+    border-radius: 30px;
+    margin: 30px;
+    min-height: 500px;
+    min-width: 500px;
+    max-width: 1000px;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+        
+}
+
+.userinfo{
+    display: flex;
+    flex-direction: column;
+  
+   
+}
+.userlabel{
+  color: white;
+  font-weight: bold;
+  margin: 10px;
+
+}
+#username{
+    width: 120px;
+    height: 30px;
+}
+#password{
+  
+    width: 120px;
+    height: 30px;
+}
+#confirmpass{
+    width: 120px;
+    height: 30px;
+    margin-left: 225px;
+    
+    
+}
+#submitbttn{
+    margin-left: 200px;
+    margin-top: 10px;
+    width: 120px;
+    height: 30px;
+    
+}
+
+label{
+    color: white;
+}
+
+#modeSwitch{
+    margin-top: 10px;
+    color: white;
+}
+
+#errormsg{
+    margin-top: 30px;
+    font-size: larger;
+    font-weight: bold;
+    visibility: hidden;
+    color: red;
+
+}

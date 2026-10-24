@@ -10,14 +10,32 @@
     <div id="Nav-Bar">
         <img class="Logo" src="images/Kurami.png">
         <div class="Nav-bttns">
-        <a id="Play-bttn" href="HTML/game.html">Play</a>
-        <a id="Leaderboard-bttn" href="HTML/leaderboard.html"> Leaderboard</a>
-        <a  id="Home-bttn" href="index.html">Home</a>
-    </div>
-    </div>
-        <div class="Game">
+            <a id="navbttn" href="HTML/game.html">Play</a>
+            <a id="navbttn" href="HTML/leaderboard.html"> Leaderboard</a>
+            <a  id="navbttn" href="index.html">Home</a>
         </div>
+    </div>
+    <div class="SignupBox">
+        <h1>Welcome</h1>
+        <div class="userinfo">
+                <label for="username" class="userlabel">
+                     Username:
+                    <input id="username"  type="text" spellcheck="false" placeholder="Enter Username">
+                </label>
+                <label for="password"  class="userlabel">
+                    Password:  
+                    <input id="password"  type="password" spellcheck="false" placeholder="Enter Password" autocomplete="new-password">
+                </label>
+                    <input id="confirmpass"  type="password" spellcheck="false" placeholder="Confirm Password">
+              
+                <button id="submitbttn">Register</button>
+            </div>
+         <a id="modeSwitch">Not new here? Click me!</a>
+
+         <label id="errormsg">nothing</label>
+
+    </div>
         <script src="/JavaScript/main.js"></script>
-        <script src="/JavaScript/ref.js"></script>
+        <script src="/JavaScript/home.js"></script>
 </body>
 </html>

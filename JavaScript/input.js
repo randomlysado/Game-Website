@@ -38,7 +38,7 @@ class Player{
   console.log(keys);
            }
        if(keys.get('KeyF')){
-       this.OpenMenu();
+       this.OpenControls();
         }
     }
  draw(){
