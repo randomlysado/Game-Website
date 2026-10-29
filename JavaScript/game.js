@@ -9,8 +9,6 @@ window.addEventListener('resize', () => {
     gameCanvas.clientWidth = window.innerWidth;
     gameCanvas.clientHeight = window.innerHeight;
 })
-
-
 closeHintBox.addEventListener('click', () =>{
 controlHintBox.style.visibility = 'hidden';
 });
