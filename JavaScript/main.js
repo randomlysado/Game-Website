@@ -2,7 +2,7 @@ const navbttns = document.getElementById('Nav-bttns');
 const navBar = document.getElementById('Nav-Bar');
 
 function CheckLoggedIn(){
-    if(sessionStorage.getItem("LoggedIn") == "false"||sessionStorage.getItem("LoggedIn") == "undefined"){
+    if(sessionStorage.getItem("LoggedIn") == "false"||sessionStorage.getItem("LoggedIn") == "undefined" ||sessionStorage.getItem("LoggedIn") == null){
         return false;
     }
     else
@@ -13,6 +13,8 @@ function CheckLoggedIn(){
 function SignOut(){
     sessionStorage.setItem("LoggedIn",false);
     sessionStorage.setItem("User",undefined);
+    sessionStorage.setItem("Level",undefined);
+
     location.replace('/index.html');
 }
 
