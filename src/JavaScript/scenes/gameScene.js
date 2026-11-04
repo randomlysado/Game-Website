@@ -113,7 +113,7 @@ export default class GameScene extends Phaser.Scene { //creates child class from
                         }
                         break;
                     case 2:
-                        if (this.enemySpawnCap <= 6) {
+                        if (this.enemySpawnCap <= 10) {
                             this.enemySpawnCap += 1;
                             statChange = true;
                         }
@@ -153,13 +153,45 @@ export default class GameScene extends Phaser.Scene { //creates child class from
         this.enemyMaxPoints = 2
 
     }
+
+    preload(){
+        this.load.image('background', '/src/assets/Enviroment/backgroud-1.png');
+        this.load.image('player-default','/src/assets/Entities/player ship1.png');
+        this.load.image('player-down','/src/assets/Entities/player ship2.png');
+
+        this.load.image('enemy-default','/src/assets/Entities/enemy ship1.png');
+        this.load.image('enemy-down','/src/assets/Entities/enemy ship2.png');
+
+        this.load.spritesheet('projectile', '/src/assets/Entities/projectile.png',{
+            frameWidth:28,
+            frameHeight:11,
+        })
+
+    }
+
     create() { // runs on scene creation
+        this.anims.create({
+            key:"fired",
+            frames:this.anims.generateFrameNumbers("projectile",{
+                start:0,
+                end:3
+            }),
+            frameRate:10,
+            repeat:-1
+        })
+           
+
+
+        const gameW = this.scale.width;
+        const gameH = this.scale.height;
+        this.background = this.add.image(0, 0, 'background');
+        this.background.setPosition(gameW/2,gameH/2);
         this.lvl = this.getSessionLevel();
         this.pScore = this.getSessionScore();
         sessionStorage.setItem("Level", this.lvl);
         this.setEnemyRules();
         if (this.lvl > 1) this.increaseDifficulty();
-
+    
         this.player = new Player(this, 100, 350); //creates player instance
         this.playerProjectiles = this.physics.add.group(); // projectiles physics list
 

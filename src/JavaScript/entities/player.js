@@ -1,13 +1,17 @@
 import Phaser from "phaser";
-export default class Player{
+export default class Player {
 
-    constructor(scene, x, y) {
+    constructor(scene, x, y,) {
         this.hp = 5;
         this.damage = 2;
 
 
         this.scene = scene;
-        this.sprite =scene.add.rectangle(x, y, 40, 40, 0x00aaff);
+        this.sprite = this.scene.add.image(x, y, 'player-default');
+        this.sprite.setScale(2, 2);
+
+
+        // this.sprite =scene.add.rectangle(x, y, 40, 40, 0x00aaff);
         scene.physics.add.existing(this.sprite);
         this.sprite.body.setImmovable(true);
         this.sprite.body.setCollideWorldBounds(true);
@@ -19,7 +23,7 @@ export default class Player{
             right: 'D'
         });
         this.shootKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.E);
-        this.pauseKey =  scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);
+        this.pauseKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);
         this.cursors = scene.input.keyboard.createCursorKeys();
     }
 
@@ -35,7 +39,8 @@ export default class Player{
         if (this.keys.down.isDown || this.cursors.down.isDown) velocityY += 1;
 
 
-
+        if (velocityY > 0) this.sprite.setTexture('player-down');
+        if (velocityY < 0) this.sprite.setTexture('player-default');
         const velocity = new Phaser.Math.Vector2(velocityX, velocityY);
 
         if (velocity.length() > 0) {
@@ -45,24 +50,22 @@ export default class Player{
         this.sprite.body.setVelocity(velocity.x, velocity.y);
         //console.log("Player HP: " + this.hp);
     }
-    
+
     shoot() {
-       if (Phaser.Input.Keyboard.JustDown(this.shootKey)){
-            const projectile = this.scene.add.rectangle(
+        if (Phaser.Input.Keyboard.JustDown(this.shootKey)) {
+            const projectile = this.scene.add.sprite(
                 this.sprite.x + 30,
                 this.sprite.y,
-                12,
-                6,
-                0xffff00
-            );
+                'projectile'
+                );
             projectile.damage = this.damage;
             this.scene.physics.add.existing(projectile);
             this.scene.playerProjectiles.add(projectile);
-
-            projectile.body.setVelocityX(500);
+            projectile.play('fired');
+            projectile.body.setVelocityX(1000);
         }
     }
-    takeDmg(damage){
+    takeDmg(damage) {
         this.hp -= damage;
 
     }

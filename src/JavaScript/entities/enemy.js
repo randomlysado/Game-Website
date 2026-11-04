@@ -11,7 +11,11 @@ export default class Enemy {
 
 
         this.scene = scene;
-        this.sprite = scene.add.rectangle(x, y, 40, 40, 0xff3333);
+        this.sprite = this.scene.add.image(x, y, 'enemy-default');
+        this.sprite.flipX = true;
+
+        this.sprite.setScale(2, 2);
+
         scene.physics.add.existing(this.sprite);
 
         this.sprite.originalVelocityX = 0;
@@ -51,22 +55,22 @@ export default class Enemy {
                 this.charge();
                 break;
         }
+
         this.updateSeparation();
 
     }
     shoot() {
-        const projectile = this.scene.add.rectangle(
+        const projectile = this.scene.add.sprite(
             this.sprite.x - 30,
             this.sprite.y,
-            12,
-            6,
-            0xffff00
+            'projectile'
         );
         projectile.damage = this.damage;
         this.scene.physics.add.existing(projectile);
         this.scene.enemyProjectiles.add(projectile);
-
-        projectile.body.setVelocityX(-500);
+        projectile.play('fired');
+        projectile.flipX = true;
+        projectile.body.setVelocityX(-1000);
     }
 
     enter() {
@@ -78,6 +82,7 @@ export default class Enemy {
         const speed = 280;
         this.sprite.originalVelocityX = -speed;
         this.sprite.originalVelocityY = 0;
+
         this.applyMovement(speed);
 
     }
@@ -107,6 +112,8 @@ export default class Enemy {
             this.sprite.originalVelocityX + this.sprite.separationX,
             this.sprite.originalVelocityY + this.sprite.separationY
         );
+        if (this.sprite.originalVelocityY > 0) this.sprite.setTexture('enemy-down');
+        if (this.sprite.originalVelocityY < 0) this.sprite.setTexture('enemy-default');
     }
     updateSeparation() {
         this.sprite.separationX *= 0.95;
