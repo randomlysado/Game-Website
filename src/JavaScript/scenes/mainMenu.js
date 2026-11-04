@@ -14,7 +14,7 @@ export default class MainMenu extends Phaser.Scene {
         }).setOrigin(0.5);
 
         // Create start button
-        const startButton = this.add.text(500, 350, "START GAME",{
+         const startButton = this.add.text(500, 350, "START GAME",{
             fontSize: "80px",
             fontStyle: "Bold",
             color: "#711313",
@@ -23,6 +23,7 @@ export default class MainMenu extends Phaser.Scene {
         startButton.setInteractive();
         startButton.on("pointerdown", () => {
             this.scene.start("GameScene");
+
         });
         // Controls
         this.add.text(500, 500, "WASD / ARROWS - MOVE\nE - SHOOT", {
@@ -30,5 +31,4 @@ export default class MainMenu extends Phaser.Scene {
             color: "#ffffff",
             align: "center"
         }).setOrigin(0.5);
-    }
-}
+    }}

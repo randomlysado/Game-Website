@@ -11,7 +11,6 @@ export default class Player {
         this.sprite.setScale(2, 2);
 
 
-        // this.sprite =scene.add.rectangle(x, y, 40, 40, 0x00aaff);
         scene.physics.add.existing(this.sprite);
         this.sprite.body.setImmovable(true);
         this.sprite.body.setCollideWorldBounds(true);
@@ -46,9 +45,7 @@ export default class Player {
         if (velocity.length() > 0) {
             velocity.normalize().scale(speed);
         }
-        //console.log("Player X:" + this.sprite.body.x +" Player Y: "+ this.sprite.body.y );
         this.sprite.body.setVelocity(velocity.x, velocity.y);
-        //console.log("Player HP: " + this.hp);
     }
 
     shoot() {
@@ -62,6 +59,7 @@ export default class Player {
             this.scene.physics.add.existing(projectile);
             this.scene.playerProjectiles.add(projectile);
             projectile.play('fired');
+            this.scene.sound.play('projectile-fired');
             projectile.body.setVelocityX(1000);
         }
     }

@@ -167,6 +167,13 @@ export default class GameScene extends Phaser.Scene { //creates child class from
             frameHeight:11,
         })
 
+        this.load.audio('projectile-fired','/src/assets/Sounds/projectil fired.wav');
+        this.sound.decodeAudio('projectile-fired');
+
+        this.load.audio('enemy-defeated','/src/assets/Sounds/enemy defeated.wav');
+        this.sound.decodeAudio('enemy-defeated');
+        this.sound.unlock();
+
     }
 
     create() { // runs on scene creation
@@ -218,6 +225,8 @@ export default class GameScene extends Phaser.Scene { //creates child class from
                 projectile.destroy()
                 if (enemyI.hp <= 0) {
                     this.increaseScore(enemyI.awardedPoints);
+                this.sound.play('enemy-defeated');
+
                     this.destroyEnemy(enemy)
                 }
 

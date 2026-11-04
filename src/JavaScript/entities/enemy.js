@@ -37,7 +37,6 @@ export default class Enemy {
             return;
         }
         if (this.cycleCount >= this.maxCycles) this.state = "Charging";
-        //console.log("Count: "+ this.cycleCount +" Max: "+ this.maxCycles);
         if (this.state == "Charging") {
             this.scene.time.removeEvent(this.shootTimer); // ends shooting event if enemy is charging
         }
@@ -70,6 +69,8 @@ export default class Enemy {
         this.scene.enemyProjectiles.add(projectile);
         projectile.play('fired');
         projectile.flipX = true;
+        this.scene.sound.play('projectile-fired');
+
         projectile.body.setVelocityX(-1000);
     }
 
@@ -123,6 +124,5 @@ export default class Enemy {
     }
     takeDmg(damage) {
         this.hp -= damage;
-        //console.log("health: "+ this.hp + " damage: "+ damage);
     }
 }

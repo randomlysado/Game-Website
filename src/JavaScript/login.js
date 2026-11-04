@@ -3,29 +3,28 @@ const __forgotButton = document.getElementById('forgot');
 let loginBool = false;
 
 const __emailField = document.getElementById('email');
-const __emailLabel = document.getElementsByClassName('emailLabel');
+const __emailLabel = document.getElementById('emailLabel');
 
 const __usernameField = document.getElementById('username');
 const __passwordField = document.getElementById('password');
 const __confirmField = document.getElementById('confirmpass');
+const __confirmlabel = document.getElementById('confirmlabel');
 
 
 const __errorMsg = document.getElementById('errormsg');
 const __welcomeMsg = document.getElementById('welcome');
 const __submitbttn = document.getElementById('submitbttn');
-
+__submitbttn.style.marginLeft = "190px"; // re-alligns button to center for sign up/ login page
 
 SignUpMode();
 __modeSwitchButton.addEventListener('click', () => {
     switch (loginBool) {
-
         case false:
             LoginMode();
             break;
         case true:
             SignUpMode();
             break;
-
     }
 }
 )
@@ -35,10 +34,15 @@ __modeSwitchButton.addEventListener('click', () => {
 function LoginMode() {
     __forgotButton.style.visibility = 'visible';
     __submitbttn.innerText = "Login";
+
     __confirmField.style.visibility = 'hidden';
     __emailField.style.visibility = 'hidden';
-    __emailLabel.item(0).style.visibility = 'hidden';
+     __emailLabel.style.visibility = 'hidden';
+
+     __confirmlabel.style.visibility = 'hidden';
+
     __modeSwitchButton.innerText = "New here? Click me!";
+    
     __welcomeMsg.innerText = "Welcome Back!!";
     __submitbttn.onclick = Login;
 
@@ -50,7 +54,9 @@ function SignUpMode() {
     __submitbttn.innerText = "Register";
     __confirmField.style.visibility = 'visible';
     __emailField.style.visibility = 'visible';
-    __emailLabel.item(0).style.visibility = 'visible';
+        __emailLabel.style.visibility = 'visible';
+
+     __confirmlabel.style.visibility = 'visible';
     __modeSwitchButton.innerText = "Not new here? Click me!";
     __welcomeMsg.innerText = "Welcome!";
     __submitbttn.onclick = Register;
@@ -122,20 +128,20 @@ function FindUser(username) {
 function UserFail(error) {
     switch (error) {
         case "Confirm Failed":
-            __errorMsg.innerText = "Passwords don't match, try again!";
+            __msg.innerText = "Passwords don't match, try again!";
             break;
         case "Username unavailable":
-            __errorMsg.innerText = "Username Unavailable, try again!";
+            __msg.innerText = "Username Unavailable, try again!";
             break;
         case "Invalid Email":
-            __errorMsg.innerText = "Invalid Email, try again!";
+            __msg.innerText = "Invalid Email, try again!";
             
         break;
         default:
-            __errorMsg.innerText = "Error, try again!";
+            __msg.innerText = "Error, try again!";
             break;
     }
-    __errorMsg.style.visibility = 'visible';
+    __msg.style.visibility = 'visible';
     ToggleFields();
 }
 function ToggleFields() {
