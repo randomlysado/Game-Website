@@ -19,6 +19,7 @@ export default class Player{
             right: 'D'
         });
         this.shootKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.E);
+        this.pauseKey =  scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);
         this.cursors = scene.input.keyboard.createCursorKeys();
     }
 
@@ -44,9 +45,9 @@ export default class Player{
         this.sprite.body.setVelocity(velocity.x, velocity.y);
         //console.log("Player HP: " + this.hp);
     }
-
+    
     shoot() {
-       if (Phaser.Input.Keyboard.JustDown(this.shootKey)) {
+       if (Phaser.Input.Keyboard.JustDown(this.shootKey)){
             const projectile = this.scene.add.rectangle(
                 this.sprite.x + 30,
                 this.sprite.y,

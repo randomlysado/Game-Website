@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/src/style.css">
     <title> Game In Progress</title>
 </head>
-    <body>
-        <div id="Nav-Bar">
-            <img class="Logo" src="/src/assets/Kurami.png">
-            <div id="Nav-bttns">
+
+<body>
+    <div id="Nav-Bar">
+        <img class="Logo" src="/src/assets/Kurami.png">
+        <div id="Nav-bttns">
             <a id="navbttn" href="/src/HTML/game.html">Play</a>
             <a id="navbttn" href="/src/HTML/leaderboard.html"> Leaderboard</a>
             <a id="navbttn" href="/index.html">Home</a>
-            </div>
         </div>
+    </div>
 
 
-        <script src="https://cdn.jsdelivr.net/npm/phaser@3.85.2/dist/phaser-arcade-physics.min.js"></script>
-        <script type="module" src="/src/JavaScript/main.js"></script>
-        <script type="module" src="/src\JavaScript\entities\enemy.js"></script>
-        <script type="module" src="/src\JavaScript\entities\player.js"></script>
-        <script  src="/src\JavaScript\accountControl.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.85.2/dist/phaser-arcade-physics.min.js"></script>
+    <script type="module" src="\src\JavaScript\scenes\gameScene.js"></script>
+    <script type="module" src="/src/JavaScript/main.js"></script>
+    <script type="module" src="/src\JavaScript\entities\enemy.js"></script>
+    <script type="module" src="/src\JavaScript\entities\player.js"></script>
+    <script src="/src\JavaScript\accountControl.js"></script>
 
 
-    </body>
+</body>
+
 </html>
