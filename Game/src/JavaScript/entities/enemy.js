@@ -101,7 +101,7 @@ export default class Enemy {
     }
     charge() {
         const speed = 400;
-        this.damage = 2;
+        this.damage *= 2;
         this.sprite.originalVelocityX = -speed;
         this.sprite.originalVelocityY = 0;
 

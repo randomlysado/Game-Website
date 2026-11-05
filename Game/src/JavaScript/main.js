@@ -3,8 +3,8 @@ import Phaser from "phaser";
 import MainMenu from './scenes/mainMenu.js';
 import GameScene from './scenes/gameScene.js';
 import PauseMenu from './scenes/pauseMenu.js';
-import WinScene from './scenes/loseScene.js';
-import LoseScene from './scenes/winScene.js';
+import LoseScene from './scenes/loseScene.js';
+import WinScene from './scenes/winScene.js';
 
 const config = {
     type: Phaser.AUTO,
