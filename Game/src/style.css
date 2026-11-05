@@ -1,0 +1,182 @@
+body {
+    background-color: black;
+    margin: 0px;
+}
+a{
+    color: white;
+}
+a:link {
+    text-decoration: none;
+}
+a:visited {
+    color: white;
+}
+a:hover {
+    color: purple;
+}
+.storyContainer{
+    border: 2px solid white;
+    border-radius: 20px;
+   
+    width: 1000px;
+    height: fit-content;
+
+    justify-content: center;
+}
+.controlBox{
+    
+    float: right;
+    border: 2px solid white;
+    border-radius: 20px;
+    display: flex;
+    width: 600px;
+    height: fit-content;
+    justify-self: center;
+    justify-content: center;
+}
+p{
+    text-align: center;
+    color: white;
+    font-size: x-large;
+}
+
+#Nav-Bar {
+    background-color: #110519;
+    border-width: 30px;
+    border-radius: 20px;
+    border-bottom: solid #ffffff;
+    display: flex;
+    position: sticky;
+    padding-left: 50px;
+    ;
+    padding-right: 50px;
+    ;
+    /* Keeps Navbar at the top of the screen without modifying other elements */
+    top: 0px;
+    width: auto;
+}
+
+#Nav-bttns {
+
+    font-style: normal;
+    margin-top: 15px;
+    width: 100%;
+}
+#logoutbttn, #settingbttn {
+    font-style: normal;
+    font-size: 30px;
+    max-width: auto;
+    max-height: 40px;
+    float: inline-end;
+    margin-left: 40px;
+
+}
+
+#navbttn {
+    font-size: 30px;
+    max-width: auto;
+    max-height: 40px;
+    margin-right: 40px;
+}
+.ScoreboardContainer {
+    background-color: transparent;
+    border-radius: 20px;
+    border-width: 90px;
+    border: solid white;
+    margin: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    height: fit-content;
+    width: 500px;
+    justify-self: center;
+}
+#Scoreboard {
+    background-color: transparent;
+    border-collapse: collapse;
+    text-align: center;
+    width: 450px;
+    position: relative;
+    margin: auto;
+}
+
+td,
+th {
+    color: white;
+    border: 1px, solid white;
+}
+
+.HeaderRow,
+th {
+    min-height: 20px;
+    font-size: larger;
+    color: black;
+    background-color: white;
+    border-radius: 10px;
+    border: 3px, solid black;
+}
+td {
+    height: 50px;
+    font-size: x-large;
+
+    background-color: transparent;
+}
+.SignupBox,.settingsContainer {
+    background-color: #110519;
+    border-radius: 30px;
+    border-width: 90px;
+    border: solid white;
+    margin: 30px;
+    min-height: 400px;
+    min-width: 500px;
+    max-width: 1000px;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+}
+#welcome {
+    color: white;
+    font-weight: bold;
+    margin: 10px;
+}
+.userinfo {
+    display: flex;
+    flex-direction: column;
+}
+.infoBox{
+    background-color: black;
+    color: white;
+    width: 200px;
+    height: 25px;
+    border: 1px solid white;
+}
+.userlabel,#confirmlabel,#emaillabel {
+    color: white;
+    font-weight: bold;
+    margin: 10px;
+
+}
+#submitbttn, #resetbttn {
+    
+    margin-top: 30px;
+    width: 120px;
+    height: 30px;
+}
+label {
+    color: white;
+}
+#modeSwitch {
+    margin-top: 10px;
+    
+}
+#forgot {
+    margin-top: 10px;
+}
+#errormsg,#msg {
+    margin-top: 30px;
+    font-size: larger;
+    font-weight: bold;
+    visibility: hidden;
+    color: red;
+}
