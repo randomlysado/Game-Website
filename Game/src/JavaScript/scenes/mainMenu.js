@@ -7,7 +7,7 @@ export default class MainMenu extends Phaser.Scene {
 
     create() {
         // Create title
-        this.add.text(500, 200, "SPACE SHOOTER",{
+        this.add.text(500, 200, "SPACE DEFENDERS",{
             fontSize: "80px",
             color: "#ffffff",
             align: "center"
@@ -26,7 +26,7 @@ export default class MainMenu extends Phaser.Scene {
 
         });
         // Controls
-        this.add.text(500, 500, "WASD / ARROWS - MOVE\nE - SHOOT", {
+        this.add.text(500, 500, "WASD / ARROWS - Move\nE - Shoot\n ESC - Pause game", {
             fontSize: "20px",
             color: "#ffffff",
             align: "center"

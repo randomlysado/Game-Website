@@ -31,9 +31,16 @@ if (CheckLoggedIn()) {// this creates a logout button for the user if theyre log
     navbttns.appendChild(settingsbttn);
 
 
+}else if(!CheckLoggedIn() && location.pathname == '/src/HTML/index.html' ){
+    const signupbttn = document.createElement("a");
+    signupbttn.id = 'signupbttn';
+    signupbttn.innerText = "Sign up/In"
+    signupbttn.href = '/src/HTML/signup.html';
+    navbttns.appendChild(signupbttn);
 }
-else if (!CheckLoggedIn() && location.pathname != '/src/HTML/signup.html' && location.pathname != '/index.html') //check if user is not logged in and not on the login page
+if (!CheckLoggedIn() && location.pathname == '/src/HTML/leaderboard.html' || location.pathname == '/src/HTML/game.html') //check if user is not logged in and not on the login page
 {
     location.replace('/src/HTML/signup.html');// sends user to home page
 
 }
+

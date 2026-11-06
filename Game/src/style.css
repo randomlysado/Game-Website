@@ -2,29 +2,35 @@ body {
     background-color: black;
     margin: 0px;
 }
-a{
+
+a {
     color: white;
 }
+
 a:link {
     text-decoration: none;
 }
+
 a:visited {
     color: white;
 }
+
 a:hover {
     color: purple;
 }
-.storyContainer{
+
+.storyContainer {
     border: 2px solid white;
     border-radius: 20px;
-   
+
     width: 1000px;
     height: fit-content;
 
     justify-content: center;
 }
-.controlBox{
-    
+
+.controlBox {
+
     float: right;
     border: 2px solid white;
     border-radius: 20px;
@@ -34,7 +40,8 @@ a:hover {
     justify-self: center;
     justify-content: center;
 }
-p{
+
+p {
     text-align: center;
     color: white;
     font-size: x-large;
@@ -62,7 +69,9 @@ p{
     margin-top: 15px;
     width: 100%;
 }
-#logoutbttn, #settingbttn {
+
+#logoutbttn, #signupbttn,
+#settingbttn {
     font-style: normal;
     font-size: 30px;
     max-width: auto;
@@ -78,6 +87,7 @@ p{
     max-height: 40px;
     margin-right: 40px;
 }
+
 .ScoreboardContainer {
     background-color: transparent;
     border-radius: 20px;
@@ -90,6 +100,7 @@ p{
     width: 500px;
     justify-self: center;
 }
+
 #Scoreboard {
     background-color: transparent;
     border-collapse: collapse;
@@ -114,13 +125,16 @@ th {
     border-radius: 10px;
     border: 3px, solid black;
 }
+
 td {
     height: 50px;
     font-size: x-large;
 
     background-color: transparent;
 }
-.SignupBox,.settingsContainer {
+
+.SignupBox,
+.settingsContainer {
     background-color: #110519;
     border-radius: 30px;
     border-width: 90px;
@@ -135,48 +149,82 @@ td {
     text-align: center;
 
 }
+
 #welcome {
     color: white;
     font-weight: bold;
     margin: 10px;
 }
+
 .userinfo {
     display: flex;
     flex-direction: column;
 }
-.infoBox{
+
+.infoBox {
     background-color: black;
     color: white;
     width: 200px;
     height: 25px;
     border: 1px solid white;
 }
-.userlabel,#confirmlabel,#emaillabel {
+
+.userlabel,
+#confirmlabel,
+#emaillabel {
     color: white;
     font-weight: bold;
     margin: 10px;
 
 }
-#submitbttn, #resetbttn {
-    
+
+#submitbttn,
+#resetbttn {
+
     margin-top: 30px;
     width: 120px;
     height: 30px;
 }
+
 label {
     color: white;
 }
+
 #modeSwitch {
     margin-top: 10px;
-    
+
 }
+
 #forgot {
     margin-top: 10px;
 }
-#errormsg,#msg {
+
+#errormsg,
+#msg {
     margin-top: 30px;
     font-size: larger;
     font-weight: bold;
     visibility: hidden;
+    color: red;
+}
+
+.passwordRules {
+    float: left;
+    border: 2px solid white;
+    border-radius: 20px;
+
+    width: 200px;
+    text-align: center;
+    height: fit-content;
+    padding: 10px;
+}
+
+h3 {
+    color: white;
+    font-weight: bold;
+    text-decoration: underline;
+    margin: 10px;
+}
+#rule1,#rule2,#rule3,#rule4{
     color: red;
 }

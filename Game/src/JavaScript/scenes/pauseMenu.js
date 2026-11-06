@@ -38,14 +38,10 @@ export default class PauseMenu extends Phaser.Scene {
         quitButton.on("pointerdown", () => {
             const sessionUser = JSON.parse(sessionStorage.getItem("User"));
             const localUser = JSON.parse(localStorage.getItem(sessionUser.Username));
+            sessionUser.Highscore = 0;
 
-            if (Number.parseInt(sessionUser.Highscore) > Number.parseInt(localUser.Highscore)) {
-                localUser.Highscore = Number.parseInt(sessionUser.Highscore);
-                sessionUser.Highscore = 0;
-            }
             sessionStorage.setItem("Level", 1);
             sessionStorage.setItem("User", JSON.stringify(sessionUser));
-            localStorage.setItem(localUser.Username, JSON.stringify(localUser));
             this.scene.stop("GameScene");
             this.scene.stop("PauseMenu");
             this.scene.start("MainMenu");
