@@ -6,7 +6,7 @@ export default class Enemy {
         this.damage = 1;
         this.awardedPoints = 2;
         this.state = "Entering";
-        this.maxCycles = 1;
+        this.maxCycles = 3;
         this.cycleCount = 0;
 
 

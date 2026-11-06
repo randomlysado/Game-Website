@@ -22,15 +22,12 @@ a:hover {
 .storyContainer {
     border: 2px solid white;
     border-radius: 20px;
-
     width: 1000px;
     height: fit-content;
-
     justify-content: center;
 }
 
 .controlBox {
-
     float: right;
     border: 2px solid white;
     border-radius: 20px;

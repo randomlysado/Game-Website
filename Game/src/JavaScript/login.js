@@ -1,5 +1,4 @@
 const __modeSwitchButton = document.getElementById('modeSwitch');
-const __forgotButton = document.getElementById('forgot');
 let loginBool = false;
 
 const __emailField = document.getElementById('email');
@@ -9,6 +8,7 @@ const __usernameField = document.getElementById('username');
 const __passwordField = document.getElementById('password');
 const __confirmField = document.getElementById('confirmpass');
 const __confirmlabel = document.getElementById('confirmlabel');
+const __viewPass = document.getElementById('viewPass');
 
 
 const __errorMsg = document.getElementById('errormsg');
@@ -20,10 +20,17 @@ const __passRule2 = document.getElementById('rule2');
 const __passRule3 = document.getElementById('rule3');
 const __passRule4 = document.getElementById('rule4');
 
-
-
-
 __submitbttn.style.marginLeft = "190px"; // re-alligns button to center for sign up/ login page
+
+__viewPass.addEventListener('click', () => {
+    if (!__viewPass.checked) {
+        __passwordField.type = 'password';
+        __confirmField.type = 'password';
+        return;
+    }
+    __passwordField.type = 'text';
+    __confirmField.type = 'text';
+})
 
 __passwordField.addEventListener('change', () => {
     const password = __passwordField.value;
@@ -58,10 +65,7 @@ __modeSwitchButton.addEventListener('click', () => {
 }
 )
 
-
-
 function LoginMode() {
-    __forgotButton.style.visibility = 'visible';
     __submitbttn.innerText = "Login";
 
     __confirmField.style.visibility = 'hidden';
@@ -79,7 +83,6 @@ function LoginMode() {
 
 }
 function SignUpMode() {
-    __forgotButton.style.visibility = 'hidden';
     __submitbttn.innerText = "Register";
     __confirmField.style.visibility = 'visible';
     __emailField.style.visibility = 'visible';
@@ -186,8 +189,6 @@ function ToggleFields() {
     __confirmField.readOnly = !__confirmField.readOnly;
     __emailField.readOnly = !__emailField.readOnly;
 }
-
-
 
 SignUpMode();
 
